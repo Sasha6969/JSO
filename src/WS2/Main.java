@@ -37,11 +37,9 @@ public class Main {
 			
 				System.out.print("Enter the Personal Number (YYMMDDXXXX): ");
 				persNum = scan.nextInt();
-			
+				int uniqueId = (int) (System.currentTimeMillis() & 0xffffff);//generate unique id
 				Member one = new Member(name, uid, persNum);
 				System.out.println("Member "+one.getName()+" has been created");
-			
-				uid++;
 				break;
 				
 			case 2:
