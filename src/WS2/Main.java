@@ -21,9 +21,6 @@ public class Main {
 		
 		int menuChoice = sc.nextInt();
 		
-		boolean invalidInput=false;
-		while(!invalidInput) {
-		
 		try {
 
 		switch (menuChoice) {
@@ -64,6 +61,5 @@ public class Main {
 			System.out.print("Enter a Valid Number: ");
 			menuChoice = sc.nextInt();
 		}
-		}
-	}
+	}	
 }
