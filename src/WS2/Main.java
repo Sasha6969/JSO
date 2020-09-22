@@ -24,6 +24,7 @@ public class Main {
 			switch (menuChoice) {
 			case 1:
 				Scanner scan = new Scanner(System.in);
+<<<<<<< HEAD
 				System.out.println("\n\t--Create a member--");
 
 				System.out.print("Enter the Full Name: ");
@@ -35,6 +36,22 @@ public class Main {
 				Member one = new Member(name, uid, persNum);
 				System.out.println("Member "+one.getName()+" has been created");
 			
+=======
+				String name;
+				int persNum;
+			
+				System.out.println("\n\t--Create a member--");
+			
+				System.out.print("Enter the Full Name: ");
+				name = scan.nextLine();		
+			
+				System.out.print("Enter the Personal Number (YYMMDDXXXX): ");
+				persNum = scan.nextInt();
+			
+				Member one = new Member(name, uid, persNum);
+				System.out.println("Member "+one.getName()+" has been created");
+			
+>>>>>>> f82932df765858cd2b4bb35c301a2fa9717c1998
 				uid++;
 				break;
 			case 2:
@@ -50,7 +67,11 @@ public class Main {
 				System.out.println("you entered 5");
 				break;
 			}
+<<<<<<< HEAD
 		} catch(Exception es) {
+=======
+		}catch(Exception es) {
+>>>>>>> f82932df765858cd2b4bb35c301a2fa9717c1998
 			System.out.print("Enter a Valid Number: ");
 		}
 	}	
