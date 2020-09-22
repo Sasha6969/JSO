@@ -19,36 +19,16 @@ public class Main {
 		System.out.print("Enter a number: ");
 		
 		boolean validInput=false;
-		while(!validInput)
-		{
-		
+		while(!validInput) {
 		try {
-<<<<<<< HEAD
 			int menuChoice = sc.nextInt();
 			validInput=true;
-		switch (menuChoice) {
-		
-		case 1:
-=======
+
 			switch (menuChoice) {
 			case 1:
 				Scanner scan = new Scanner(System.in);
-<<<<<<< HEAD
-				System.out.println("\n\t--Create a member--");
-
-				System.out.print("Enter the Full Name: ");
-				String name = scan.nextLine();
-			
-				System.out.print("Enter the Personal Number (YYMMDDXXXX): ");
-				int persNum = scan.nextInt();
-			
-				Member one = new Member(name, uid, persNum);
-				System.out.println("Member "+one.getName()+" has been created");
-			
-=======
 				String name;
 				int persNum;
->>>>>>> f82932df765858cd2b4bb35c301a2fa9717c1998
 			
 				System.out.println("\n\t--Create a member--");
 			
@@ -61,33 +41,9 @@ public class Main {
 				Member one = new Member(name, uid, persNum);
 				System.out.println("Member "+one.getName()+" has been created");
 			
-<<<<<<< HEAD
-<<<<<<< HEAD
-			Member one = new Member(name, uid, persNum);
-			System.out.println("Member "+one.getName()+" has been created");
-			
-			uid++;
-			break;
-		case 2:
-			System.out.println("you entered 2");
-			break;
-		case 3:
-			System.out.println("you entered 3");
-			break;
-		case 4:
-			System.out.println("you entered 4");
-			break;
-		case 5:
-			System.out.println("you entered 5");
-			break;
-		}
-		}catch(InputMismatchException es) {
-=======
-=======
->>>>>>> f82932df765858cd2b4bb35c301a2fa9717c1998
->>>>>>> d6cdb27c553f905316f8f9618584b00e0b866eea
 				uid++;
 				break;
+				
 			case 2:
 				System.out.println("you entered 2");
 				break;
@@ -101,20 +57,11 @@ public class Main {
 				System.out.println("you entered 5");
 				break;
 			}
-<<<<<<< HEAD
-		} catch(Exception es) {
-=======
-		}catch(Exception es) {
->>>>>>> f82932df765858cd2b4bb35c301a2fa9717c1998
+		}catch(InputMismatchException ime) {
 			System.out.print("Enter a Valid Number: ");
-<<<<<<< HEAD
 			sc.nextLine();
 			continue;
-			
-			
-=======
->>>>>>> d6cdb27c553f905316f8f9618584b00e0b866eea
+			}
 		}
-	}	
-}
+	}
 }
