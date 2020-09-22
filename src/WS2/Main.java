@@ -22,9 +22,7 @@ public class Main {
 		int menuChoice = sc.nextInt();
 		
 		try {
-
 			switch (menuChoice) {
-		
 			case 1:
 				Scanner scan = new Scanner(System.in);
 				String name;
