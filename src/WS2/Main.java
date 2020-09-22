@@ -13,11 +13,6 @@ public class Main {
 		System.out.print("Enter PN(YYMMDDXXXX): ");
 		long pn = sc.nextLong();
 		
-		int assignUid()
-		{
-			return 0;
-		}
-		
 		int uid = 0001;
 		
 		Member one = new Member(name, uid, pn);
