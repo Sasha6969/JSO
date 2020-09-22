@@ -26,6 +26,7 @@ public class Main {
 
 			switch (menuChoice) {
 			case 1:
+				
 				Scanner scan = new Scanner(System.in);
 				String name;
 				int persNum;
