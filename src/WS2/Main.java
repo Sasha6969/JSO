@@ -29,7 +29,7 @@ public class Main {
 				
 				Scanner scan = new Scanner(System.in);
 				String name;
-				int persNum;
+				String persNum;
 			
 				System.out.println("\n\t--Create a member--");
 			
@@ -37,7 +37,7 @@ public class Main {
 				name = scan.nextLine();		
 			
 				System.out.print("Enter the Personal Number (YYMMDDXXXX): ");
-				persNum = scan.nextInt();
+				persNum = scan.next();
 				int uniqueId = (int) (System.currentTimeMillis() & 0xffffff);//generate unique id
 				Member one = new Member(name, uniqueId, persNum);
 				System.out.println("\nMember "+one.getName()+" has been created");
