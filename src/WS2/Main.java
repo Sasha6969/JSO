@@ -8,7 +8,6 @@ public class Main {
 		
 		Scanner sc = new Scanner(System.in);
 		int uid = 0000;
-		
 		System.out.println("\t   Welcome to the Yacht club");
 		System.out.println("\t\t-----MENU-----\n");
 		System.out.println("Choose an option from below");
@@ -22,44 +21,37 @@ public class Main {
 		int menuChoice = sc.nextInt();
 		
 		try {
+			switch (menuChoice) {
+			case 1:
+				Scanner scan = new Scanner(System.in);
+				System.out.println("\n\t--Create a member--");
 
-		switch (menuChoice) {
-		
-		case 1:
+				System.out.print("Enter the Full Name: ");
+				String name = scan.nextLine();
 			
-			Scanner scan = new Scanner(System.in);
-			String name;
-			int persNum;
+				System.out.print("Enter the Personal Number (YYMMDDXXXX): ");
+				int persNum = scan.nextInt();
 			
-			System.out.println("\n\t--Create a member--");
+				Member one = new Member(name, uid, persNum);
+				System.out.println("Member "+one.getName()+" has been created");
 			
-			System.out.print("Enter the Full Name: ");
-			name = scan.nextLine();		
-			
-			System.out.print("Enter the Personal Number (YYMMDDXXXX): ");
-			persNum = scan.nextInt();
-			
-			Member one = new Member(name, uid, persNum);
-			System.out.println("Member "+one.getName()+" has been created");
-			
-			uid++;
-			break;
-		case 2:
-			System.out.println("you entered 2");
-			break;
-		case 3:
-			System.out.println("you entered 3");
-			break;
-		case 4:
-			System.out.println("you entered 4");
-			break;
-		case 5:
-			System.out.println("you entered 5");
-			break;
-		}
-		}catch(Exception es) {
+				uid++;
+				break;
+			case 2:
+				System.out.println("you entered 2");
+				break;
+			case 3:
+				System.out.println("you entered 3");
+				break;
+			case 4:
+				System.out.println("you entered 4");
+				break;
+			case 5:
+				System.out.println("you entered 5");
+				break;
+			}
+		} catch(Exception es) {
 			System.out.print("Enter a Valid Number: ");
-			menuChoice = sc.nextInt();
 		}
 	}	
 }
