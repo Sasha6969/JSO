@@ -25,6 +25,15 @@ public class Member {
 		this.name = name;
 	}
 	
+	public Member(){}
+	
+	public Member(int UID, long PN, String name){
+		
+		UID = this.UID;
+		PN = this.PN;
+		name = this.name;
+		
+	}
 	
 
 }
