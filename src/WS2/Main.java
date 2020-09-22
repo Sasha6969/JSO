@@ -19,10 +19,13 @@ public class Main {
 		System.out.println("5. Help\n");
 		System.out.print("Enter a number: ");
 		
-		int menuChoice = sc.nextInt();
+		boolean validInput=false;
+		while(!validInput)
+		{
 		
 		try {
-
+			int menuChoice = sc.nextInt();
+			validInput=true;
 		switch (menuChoice) {
 		
 		case 1:
@@ -57,9 +60,13 @@ public class Main {
 			System.out.println("you entered 5");
 			break;
 		}
-		}catch(Exception es) {
+		}catch(InputMismatchException es) {
 			System.out.print("Enter a Valid Number: ");
-			menuChoice = sc.nextInt();
+			sc.nextLine();
+			continue;
+			
+			
 		}
 	}	
+}
 }
