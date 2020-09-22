@@ -25,7 +25,7 @@ public class Member {
 		this.name = name;
 	}
 	
-	public Member(){}
+
 	
 	public Member(String name, int UID, long PN){
 		this.UID = UID;
