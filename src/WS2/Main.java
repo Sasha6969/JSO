@@ -23,40 +23,39 @@ public class Main {
 		
 		try {
 
-		switch (menuChoice) {
+			switch (menuChoice) {
 		
-		case 1:
+			case 1:
+				Scanner scan = new Scanner(System.in);
+				String name;
+				int persNum;
 			
-			Scanner scan = new Scanner(System.in);
-			String name;
-			int persNum;
+				System.out.println("\n\t--Create a member--");
 			
-			System.out.println("\n\t--Create a member--");
+				System.out.print("Enter the Full Name: ");
+				name = scan.nextLine();		
 			
-			System.out.print("Enter the Full Name: ");
-			name = scan.nextLine();		
+				System.out.print("Enter the Personal Number (YYMMDDXXXX): ");
+				persNum = scan.nextInt();
 			
-			System.out.print("Enter the Personal Number (YYMMDDXXXX): ");
-			persNum = scan.nextInt();
+				Member one = new Member(name, uid, persNum);
+				System.out.println("Member "+one.getName()+" has been created");
 			
-			Member one = new Member(name, uid, persNum);
-			System.out.println("Member "+one.getName()+" has been created");
-			
-			uid++;
-			break;
-		case 2:
-			System.out.println("you entered 2");
-			break;
-		case 3:
-			System.out.println("you entered 3");
-			break;
-		case 4:
-			System.out.println("you entered 4");
-			break;
-		case 5:
-			System.out.println("you entered 5");
-			break;
-		}
+				uid++;
+				break;
+			case 2:
+				System.out.println("you entered 2");
+				break;
+			case 3:
+				System.out.println("you entered 3");
+				break;
+			case 4:
+				System.out.println("you entered 4");
+				break;
+			case 5:
+				System.out.println("you entered 5");
+				break;
+			}
 		}catch(Exception es) {
 			System.out.print("Enter a Valid Number: ");
 			menuChoice = sc.nextInt();
