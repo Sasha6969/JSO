@@ -28,11 +28,9 @@ public class Member {
 	public Member(){}
 	
 	public Member(int UID, long PN, String name){
-		
 		UID = this.UID;
 		PN = this.PN;
 		name = this.name;
-		
 	}
 	
 
