@@ -7,7 +7,6 @@ public class Main {
 		
 		
 		Scanner sc = new Scanner(System.in);
-		int uid = 0000;
 		System.out.println("\t   Welcome to the Yacht club");
 		System.out.println("\t\t-----MENU-----\n");
 		System.out.println("Choose an option from below");
@@ -33,14 +32,16 @@ public class Main {
 			
 				System.out.println("\n\t--Create a member--");
 			
-				System.out.print("Enter the Full Name: ");
+				System.out.print("\nEnter Full Name: ");
 				name = scan.nextLine();		
 			
 				System.out.print("Enter the Personal Number (YYMMDDXXXX): ");
 				persNum = scan.nextInt();
 				int uniqueId = (int) (System.currentTimeMillis() & 0xffffff);//generate unique id
-				Member one = new Member(name, uid, persNum);
-				System.out.println("Member "+one.getName()+" has been created");
+				Member one = new Member(name, uniqueId, persNum);
+				System.out.println("\nMember "+one.getName()+" has been created");
+				System.out.println("Your PN: "+one.getPN());
+				System.out.println("Your UID: "+one.getUID());
 				break;
 				
 			case 2:
