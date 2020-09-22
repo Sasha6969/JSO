@@ -2,14 +2,14 @@ package WS2;
 
 public class Boat {
 	
-	private int boatLength;
+	private double boatLength;
 	private String boatType;
 	
 	
-	public int getBoatLength() {
+	public double getBoatLength() {
 		return boatLength;
 	}
-	public void setBoatLength(int boatLength) {
+	public void setBoatLength(double boatLength) {
 		this.boatLength = boatLength;
 	}
 	public String getBoatType() {
@@ -19,9 +19,9 @@ public class Boat {
 		this.boatType = boatType;
 	}
 	
-	public Boat() {}
+
 	
-	public Boat(int boatLength, String boatType) {
+	public Boat(double boatLength, String boatType) {
 		boatLength = this.boatLength;
 		boatType = this.boatType;
 	}
