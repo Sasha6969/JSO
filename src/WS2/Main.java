@@ -8,7 +8,6 @@ public class Main {
 		
 		Scanner sc = new Scanner(System.in);
 		int uid = 0000;
-		
 		System.out.println("\t   Welcome to the Yacht club");
 		System.out.println("\t\t-----MENU-----\n");
 		System.out.println("Choose an option from below");
@@ -34,6 +33,19 @@ public class Main {
 			switch (menuChoice) {
 			case 1:
 				Scanner scan = new Scanner(System.in);
+<<<<<<< HEAD
+				System.out.println("\n\t--Create a member--");
+
+				System.out.print("Enter the Full Name: ");
+				String name = scan.nextLine();
+			
+				System.out.print("Enter the Personal Number (YYMMDDXXXX): ");
+				int persNum = scan.nextInt();
+			
+				Member one = new Member(name, uid, persNum);
+				System.out.println("Member "+one.getName()+" has been created");
+			
+=======
 				String name;
 				int persNum;
 >>>>>>> f82932df765858cd2b4bb35c301a2fa9717c1998
@@ -49,6 +61,7 @@ public class Main {
 				Member one = new Member(name, uid, persNum);
 				System.out.println("Member "+one.getName()+" has been created");
 			
+<<<<<<< HEAD
 <<<<<<< HEAD
 			Member one = new Member(name, uid, persNum);
 			System.out.println("Member "+one.getName()+" has been created");
@@ -70,6 +83,9 @@ public class Main {
 		}
 		}catch(InputMismatchException es) {
 =======
+=======
+>>>>>>> f82932df765858cd2b4bb35c301a2fa9717c1998
+>>>>>>> d6cdb27c553f905316f8f9618584b00e0b866eea
 				uid++;
 				break;
 			case 2:
@@ -85,13 +101,19 @@ public class Main {
 				System.out.println("you entered 5");
 				break;
 			}
+<<<<<<< HEAD
+		} catch(Exception es) {
+=======
 		}catch(Exception es) {
 >>>>>>> f82932df765858cd2b4bb35c301a2fa9717c1998
 			System.out.print("Enter a Valid Number: ");
+<<<<<<< HEAD
 			sc.nextLine();
 			continue;
 			
 			
+=======
+>>>>>>> d6cdb27c553f905316f8f9618584b00e0b866eea
 		}
 	}	
 }
