@@ -16,6 +16,7 @@ public class Main {
 		System.out.println("4. Delete");
 		System.out.println("5. Help\n");
 		System.out.print("Enter a number: ");
+		int jatin;
 		
 		boolean validInput=false;
 		while(!validInput) {
