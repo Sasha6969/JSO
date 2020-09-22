@@ -10,7 +10,7 @@ public class Main {
 		System.out.print("Enter Name: ");
 		String name = sc.nextLine();
 		
-		System.out.print("Enter PN(YY/MM/DD/XXXX): ");
+		System.out.print("Enter PN(YYMMDDXXXX): ");
 		long pn = sc.nextLong();
 		
 		int uid = 0001;
