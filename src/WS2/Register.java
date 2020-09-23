@@ -73,7 +73,7 @@ public class Register {
 	public static void regBoatTxt() throws IOException{
 
 		Scanner sc = new Scanner(System.in);
-		System.out.println("\n\t--Register a Boat--");
+		System.out.println("\n\t---Register a Boat---");
 
 		System.out.print("What is your UID: ");
 		int ID=sc.nextInt();
@@ -83,7 +83,8 @@ public class Register {
 
 			System.out.print("How Many Boats Would Like to Register: ");
 			int boats = sc.nextInt();
-
+			m.setnOfBoats(boats);
+			
 			for (int i = 0; i < boats; i++) {
 				tempUid.add(ID);
 				System.out.print("\nChoose a Boat Type (1-4): ");
@@ -116,12 +117,77 @@ public class Register {
 				System.out.print("UID doesnt exist,please try again: ");
 				ID=sc.nextInt();
 			}
-
-
 		}
-
-
 	}
 	
+	public static void showInfo() {
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println();
+		System.out.println("\tShow Information\n");
+		System.out.println("Choose an option from below");
+		System.out.println("  1. Show Members List");
+		System.out.println("  2. Show Members' Info");
+		System.out.print("\nEnter a number: ");
+		int choice3 = sc.nextInt();
+		
+		if(choice3==1) {
+			System.out.println("\n1. Comapct List");
+			System.out.println("2. Verbose List");
+			System.out.println("Choose a List: ");
+			int list = sc.nextInt();
+			
+			if (list==1) {
+				String comp = "";
+				for(Member m: memList) {
+				comp = comp.concat(m.getName()+" ").concat(Integer.toString(m.getUID())+" ")
+						.concat(Integer.toString(m.getnOfBoats())+"\n");
+				
+				}
+				System.out.print(comp+"\n");
+				
+			}
+			if (list==2) {
+				
+			}
+			
+		}
+		if(choice3==2) {
+			
+		}
+		
+		return;
+	}
+	
+	
+	public static void fileSearch() throws IOException{
+		
+		File f1=new File("C:\\Users\\Saihe\\Documents\\GitHub\\JSO\\Members.txt");
+		String[] words=null; 						
+		FileReader fr = new FileReader(f1); 		 
+		BufferedReader br = new BufferedReader(fr); 
+		String s;     
+		String input="6575844";   					
+		int count=0;
+		
+		while((s=br.readLine())!=null){
+			words=s.split(";");  				
+			for (String word : words){
+				if (word.equals(input)){
+					count++;    					
+					}
+				}
+			}
+		
+		if(count!=0){
+			System.out.println("The given word is present for "+count+ " Times in the file");
+		}
+		else{
+			System.out.println("The given word is not present in the file");
+		}
+
+		fr.close();
+		
+	}
 	
 }

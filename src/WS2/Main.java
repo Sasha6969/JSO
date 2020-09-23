@@ -16,12 +16,13 @@ public class Main {
 			switch (menuChoice) {
 			case 1:
 				Register.regMember();
+				Register.regMemberTxt();
 				break;
 			case 2:
 				Register.regBoatTxt();
 				break;
 			case 3:
-				System.out.println("you entered 3\n");
+				Register.showInfo();
 				break;
 			case 4:
 				System.out.println("you entered 4\n");
@@ -31,7 +32,6 @@ public class Main {
 				break;
 			case 6:
 				System.out.println("Saving and Exiting...\n");
-				Register.regMemberTxt();
 				break;
 			}
 		}
@@ -43,17 +43,17 @@ public class Main {
 		int menuChoice = 0;
 		
 
-		System.out.println("-------------------------------------");
+		System.out.println("|-----------------------------------|");
 		System.out.println("|      Welcome to the Yacht club    |");
 		System.out.println("|---------------MENU----------------|");
 		System.out.println("| Choose an option from below:      |");
 		System.out.println("| 1. Create a Member                |");
 		System.out.println("| 2. Register Boat             	    |");
 		System.out.println("| 3. Show Information               |");
-		System.out.println("| 4. Change Information	 		    |");
-		System.out.println("| 5. Delete Information		 	    |");
+		System.out.println("| 4. Change Information	 	    |");
+		System.out.println("| 5. Delete Information	 	    |");
 		System.out.println("| 6. Exit			    |");
-		System.out.println("-------------------------------------");
+		System.out.println("|-----------------------------------|");
 		System.out.print("Enter a number: ");
 		
 		menuChoice = sc.nextInt();
