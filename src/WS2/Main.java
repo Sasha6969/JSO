@@ -36,7 +36,6 @@ public class Main {
 				break;
 			}
 		}
-
 	}
 
 	public static int menu() {
