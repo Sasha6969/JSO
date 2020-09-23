@@ -22,7 +22,7 @@ public class Boat {
 	}
 
 	public Boat(double boatLength, String boatType) {
-		boatLength = this.boatLength;
-		boatType = this.boatType;
+		this.boatLength = boatLength;
+		this.boatType = boatType;
 	}
 }

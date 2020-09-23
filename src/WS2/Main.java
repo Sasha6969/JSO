@@ -17,6 +17,7 @@ public class Main {
 				break;
 			case 2:
 				Register.regBoat();
+				Register.regBoatTxt();
 				break;
 			case 3:
 				Register.showInfo();

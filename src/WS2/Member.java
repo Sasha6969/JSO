@@ -45,12 +45,12 @@ public class Member {
         this.name = name;
     }
 	
-	public Member(String name, int UID, String PN, int numBoats) {
+	/*public Member(String name, int UID, String PN, int numBoats) {
         this.UID = UID;
         this.PN = PN;
         this.name = name;
         this.nOfBoats = numBoats;
     }
-
+*/
 
 }
