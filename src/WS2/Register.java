@@ -1,7 +1,6 @@
 package WS2;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,7 +10,7 @@ public class Register {
 	
 	static ArrayList<Member> memList=new ArrayList<>();
 	private static File memFile = new File("Members.txt");
-	private static File boatFile = new File("Boats.txt");
+	//private static File boatFile = new File("Boats.txt");
 	
 	
 	public static void regMember()
@@ -41,7 +40,7 @@ public class Register {
 			memFile.createNewFile();
 			try {
 				for(Member m: memList)
-				{ FileWriter myWriter = new FileWriter("Members.txt");
+				{ FileWriter myWriter = new FileWriter(memFile.getPath());//To get path of the file
 			      myWriter.write(m.getName()+";"+m.getPN()+";"+m.getUID()+"\n");
 			      
 			      myWriter.close();
@@ -53,7 +52,7 @@ public class Register {
 		} else {
 			try {
 				for(Member m: memList)
-				{ FileWriter myWriter = new FileWriter("Members.txt");
+				{ FileWriter myWriter = new FileWriter(memFile.getPath());
 			      myWriter.write(m.getName()+";"+m.getPN()+";"+m.getUID()+"\n");
 			      
 			      myWriter.close();
