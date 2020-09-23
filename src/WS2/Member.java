@@ -5,6 +5,15 @@ public class Member {
     private int UID;
     private String PN;
     private String name;
+    private int nOfBoats;
+
+	public int getnOfBoats() {
+		return nOfBoats;
+	}
+
+	public void setnOfBoats(int nOfBoats) {
+		this.nOfBoats = nOfBoats;
+	}
 
 	public int getUID() {
 		return UID;
@@ -34,6 +43,13 @@ public class Member {
         this.UID = UID;
         this.PN = PN;
         this.name = name;
+    }
+	
+	public Member(String name, int UID, String PN, int numBoats) {
+        this.UID = UID;
+        this.PN = PN;
+        this.name = name;
+        this.nOfBoats = numBoats;
     }
 
 
