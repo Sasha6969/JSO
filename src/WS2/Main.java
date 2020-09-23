@@ -27,10 +27,10 @@ public class Main {
 				System.out.println("you entered 4\n");
 				break;
 			case 5:
-				System.out.println("Saving and Exiting...\n");
-				Register.regMemberTxt();
+				System.out.println("you entered 5\n");
 				break;
-			case 0:
+			case 6:
+				System.out.println("Saving and Exiting...\n");
 				Register.regMemberTxt();
 				break;
 			}
@@ -47,12 +47,12 @@ public class Main {
 		System.out.println("|      Welcome to the Yacht club    |");
 		System.out.println("|---------------MENU----------------|");
 		System.out.println("| Choose an option from below:      |");
-		System.out.println("| 1. Create                         |");
-		System.out.println("| 2. Retrieve                  	    |");
-		System.out.println("| 3. Update                         |");
-		System.out.println("| 4. Delete			    |");
-		System.out.println("| 5. Help		 	    |");
-		System.out.println("| 0. Exit			    |");
+		System.out.println("| 1. Create a Member                |");
+		System.out.println("| 2. Register Boat             	    |");
+		System.out.println("| 3. Show Members                   |");
+		System.out.println("| 4. Change Information	 		    |");
+		System.out.println("| 5. Delete Information		 	    |");
+		System.out.println("| 6. Exit			    |");
 		System.out.println("-------------------------------------");
 		System.out.print("Enter a number: ");
 		
