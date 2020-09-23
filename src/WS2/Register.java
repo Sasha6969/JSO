@@ -13,7 +13,7 @@ public class Register {
     private static File boatFile = new File("Boats.txt");
 
 
-    public static void regMember() { //HELOOOOOO
+    public static void regMember() { //HELOOOOOOO
         Scanner sc = new Scanner(System.in);
         System.out.println("\n\t--Create a member--");
 
