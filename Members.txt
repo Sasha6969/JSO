@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 sasha;383838;1927389
 jatin;2384;1959255
+=======
+10301661;Obaida Abu Issa;0009056979
+10321202;Jatin Shadeva;9988775069
+>>>>>>> bef7d4d75599dfb3ca5785e5bb0a4c4345ce079d

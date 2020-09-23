@@ -19,7 +19,7 @@ public class Main {
 				Register.regMemberTxt();
 				break;
 			case 2:
-				Register.regBoatTxt();
+				Register.regBoat();
 				break;
 			case 3:
 				Register.showInfo();
@@ -28,10 +28,10 @@ public class Main {
 				System.out.println("you entered 4\n");
 				break;
 			case 5:
-				System.out.println("you entered 5\n");
-				break;
-			case 6:
 				System.out.println("Saving and Exiting...\n");
+				break;
+			case 0:
+				Register.regMemberTxt();
 				break;
 			}
 		}
@@ -47,6 +47,7 @@ public class Main {
 		System.out.println("|      Welcome to the Yacht club    |");
 		System.out.println("|---------------MENU----------------|");
 		System.out.println("| Choose an option from below:      |");
+<<<<<<< HEAD
 		System.out.println("| 1. Create a Member                |");
 		System.out.println("| 2. Register Boat             	    |");
 		System.out.println("| 3. Show Information               |");
@@ -54,6 +55,15 @@ public class Main {
 		System.out.println("| 5. Delete Information	 	    |");
 		System.out.println("| 6. Exit			    |");
 		System.out.println("|-----------------------------------|");
+=======
+		System.out.println("| 1. Create                         |");
+		System.out.println("| 2. Retrieve                  	    |");
+		System.out.println("| 3. Update                         |");
+		System.out.println("| 4. Delete			                |");
+		System.out.println("| 5. Help		 	                |");
+		System.out.println("| 0. Exit			                |");
+		System.out.println("-------------------------------------");
+>>>>>>> bef7d4d75599dfb3ca5785e5bb0a4c4345ce079d
 		System.out.print("Enter a number: ");
 		
 		menuChoice = sc.nextInt();
