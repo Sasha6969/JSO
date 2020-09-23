@@ -37,13 +37,15 @@ public class Register {
 		if(!memFile.exists()) {
 			memFile.createNewFile();
 			try {
+				FileWriter myWriter = new FileWriter(memFile.getPath());
+				Writer output = new BufferedWriter(myWriter);
 				for(Member m: memList)
-				{ FileWriter myWriter = new FileWriter(memFile.getPath());//To get path of the file
-			      myWriter.write(m.getName()+";"+m.getPN()+";"+m.getUID()+"\n");
-			      
-			      myWriter.close();
-			      System.out.println("Successfully wrote to the file.");
-			    }} catch (IOException e) {
+				{
+					output.write(m.getName()+";"+m.getPN()+";"+m.getUID() + "\n");
+					System.out.println("Successfully wrote to the file.");
+			    }
+				output.close();
+			} catch (IOException e) {
 			      System.out.println("An error occurred.");
 			      e.printStackTrace();
 			    }
@@ -53,7 +55,7 @@ public class Register {
 				Writer output = new BufferedWriter(myWriter);
 				for(Member m : memList)
 				{
-					output.write(m.getName()+"/"+m.getPN()+"/"+m.getUID() + "\n");
+					output.write(m.getName()+";"+m.getPN()+";"+m.getUID() + "\n");
 			      	System.out.println("Successfully wrote to the file.");
 			    }
 				output.close();
