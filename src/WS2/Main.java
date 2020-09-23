@@ -18,7 +18,7 @@ public class Main {
 				Register.regMember();
 				break;
 			case 2:
-				Register.regBoatTxt();
+				Register.regBoat();
 				break;
 			case 3:
 				System.out.println("you entered 3\n");
@@ -50,9 +50,9 @@ public class Main {
 		System.out.println("| 1. Create                         |");
 		System.out.println("| 2. Retrieve                  	    |");
 		System.out.println("| 3. Update                         |");
-		System.out.println("| 4. Delete			    |");
-		System.out.println("| 5. Help		 	    |");
-		System.out.println("| 0. Exit			    |");
+		System.out.println("| 4. Delete			                |");
+		System.out.println("| 5. Help		 	                |");
+		System.out.println("| 0. Exit			                |");
 		System.out.println("-------------------------------------");
 		System.out.print("Enter a number: ");
 		
