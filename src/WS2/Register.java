@@ -32,7 +32,7 @@ public class Register {
 			System.out.println("\nMember "+temp.getName()+" has been created");
 			System.out.println("Your PN: "+temp.getPN());
 			System.out.println("Your UID: "+temp.getUID());
-			sc.close();
+
 }
 	public static void regMemberTxt() throws IOException
 	{
