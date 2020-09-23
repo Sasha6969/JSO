@@ -20,7 +20,7 @@ public class Main {
 				break;
 
 			case 2:
-				System.out.println("you entered 2\n");
+				Register.regBoatTxt();
 				break;
 			case 3:
 				System.out.println("you entered 3\n");
