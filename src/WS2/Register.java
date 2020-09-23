@@ -15,24 +15,24 @@ public class Register {
 	
 	public static void regMember()
 {
-			Scanner scan = new Scanner(System.in);
-			String name;
-			String persNum;
-		
+			Scanner sc = new Scanner(System.in);		
 			System.out.println("\n\t--Create a member--");
 		
 			System.out.print("\nEnter Full Name: ");
-			name = scan.nextLine();		
+			String name = sc.nextLine();		
 		
 			System.out.print("Enter the Personal Number (YYMMDDXXXX): ");
-			persNum = scan.next();
+			String persNum = sc.next();
+			
 			int uniqueId = (int) (System.currentTimeMillis() & 0xffffff);//generate unique id
-			Member one = new Member(name, uniqueId, persNum);
-			memList.add(one);
-			System.out.println("\nMember "+one.getName()+" has been created");
-			System.out.println("Your PN: "+one.getPN());
-			System.out.println("Your UID: "+one.getUID());
-			scan.close();
+			
+			Member temp = new Member(name, uniqueId, persNum);
+			memList.add(temp);
+			
+			System.out.println("\nMember "+temp.getName()+" has been created");
+			System.out.println("Your PN: "+temp.getPN());
+			System.out.println("Your UID: "+temp.getUID());
+			sc.close();
 }
 	public static void regMemberTxt() throws IOException
 	{
