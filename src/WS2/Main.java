@@ -28,6 +28,7 @@ public class Main {
 				break;
 			case 5:
 				System.out.println("Saving and Exiting...\n");
+				Register.regMemberTxt();
 				break;
 			case 0:
 				Register.regMemberTxt();
