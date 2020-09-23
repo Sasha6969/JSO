@@ -1,8 +1,6 @@
 package WS2;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -51,13 +49,15 @@ public class Register {
 			    }
 		} else {
 			try {
-				for(Member m: memList)
-				{ FileWriter myWriter = new FileWriter(memFile.getPath());
-			      myWriter.write(m.getName()+";"+m.getPN()+";"+m.getUID()+"\n");
-			      
-			      myWriter.close();
-			      System.out.println("Successfully wrote to the file.");
-			    }} catch (IOException e) {
+				FileWriter myWriter = new FileWriter(memFile.getPath());
+				Writer output = new BufferedWriter(myWriter);
+				for(Member m : memList)
+				{
+					output.write(m.getName()+"/"+m.getPN()+"/"+m.getUID() + "\n");
+			      	System.out.println("Successfully wrote to the file.");
+			    }
+				output.close();
+			} catch (IOException e) {
 			      System.out.println("An error occurred.");
 			      e.printStackTrace();
 			    }
