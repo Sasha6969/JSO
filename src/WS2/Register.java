@@ -39,7 +39,7 @@ public class Register {
 				FileWriter fileWriter = new FileWriter(memFile,true);
 				BufferedWriter output = new BufferedWriter(fileWriter);
 				for (Member m : memList) {
-					output.write(m.getName() + ";" + m.getPN() + ";" + m.getUID() + "\n");
+					output.write(m.getUID() + "   " + m.getName() + "   " + m.getPN() + "\n");
 					System.out.println("Successfully wrote to the file.");
 				}
 				output.close();
@@ -52,7 +52,7 @@ public class Register {
 				FileWriter fileWriter = new FileWriter(memFile,true);
 				BufferedWriter output = new BufferedWriter(fileWriter);
 				for (Member m : memList) {
-					output.write(m.getName() + ";" + m.getPN() + ";" + m.getUID() + "\n");
+					output.write(m.getUID() + "   " + m.getName() + "   " + m.getPN() + "\n");
 					// System.out.println("Successfully wrote to the file.");
 				}
 				output.close();
@@ -70,22 +70,24 @@ public class Register {
 
 		System.out.print("What is your UID: ");
 		int ID = sc.nextInt();
+		ArrayList<Integer> storedId = new ArrayList<>();
+		storedId=saveUID();
 
-		for (Member m : memList) {
+		for (int i=0;i<storedId.size();i++) {
 
-			if (m.getUID() == ID) {
+			if (storedId.get(i) == ID) {
 
 				System.out.print("How Many Boats Would Like to Register: ");
 				int boats = sc.nextInt();
-				m.setnOfBoats(boats);
-				for (int i = 0; i < boats; i++) {
+
+				for (int j = 0; j < boats; j++) {
 					tempUid.add(ID);
 					System.out.print("\nChoose a Boat Type (1-4): ");
 					System.out.println("\n1. Sailboat" + "\n2. Motorsailer" + "\n3. Kayak" + "\n4. Other");
 					System.out.print("Enter Number: ");
 					int type = sc.nextInt();
 					System.out.print("Enter Boat Length in Meters: ");
-					double length = sc.nextInt();
+					double length = sc.nextDouble();
 					
 					if (type == 1) {
 						Boat sail = new Boat(length, "Sailboat");
@@ -104,10 +106,10 @@ public class Register {
 						boatList.add(other);
 					}
 				}
-			} else {
+			} /*else {continue;
 				System.out.print("UID doesnt exist,please try again: ");
 				ID = sc.nextInt();
-			}
+			}*/
 		}
 	}
 
@@ -120,7 +122,7 @@ public class Register {
 				FileWriter myWriter = new FileWriter(boatFile.getPath());
 				Writer output = new BufferedWriter(myWriter);
 				for (Boat b : boatList) {
-					output.write(tempUid.get(i).toString() + ";" + b.getBoatType() + ";"
+					output.write(tempUid.get(i).toString() + "   " + b.getBoatType() + "   "
 							+ Double.toString(b.getBoatLength()) + "\n");
 					// System.out.println("Successfully wrote to the file.");
 					i++;
@@ -136,7 +138,7 @@ public class Register {
 				Writer output = new BufferedWriter(myWriter);
 				for (Boat b : boatList) {
 					// System.out.print( b.getBoatType());
-					output.write(tempUid.get(i).toString() + ";" + b.getBoatType() + ";" + b.getBoatLength() + "\n");
+					output.write(tempUid.get(i).toString() + "   " + b.getBoatType() + "   " + b.getBoatLength() + "\n");
 					// System.out.println("Successfully wrote to the file.");
 					i++;
 				}
@@ -166,14 +168,8 @@ public class Register {
 			int list = sc.nextInt();
 			
 			if (list == 1) {
-				String comp = "";
-				for (Member m : memList) {
-					comp = comp.concat(m.getName() + " ").concat(Integer.toString(m.getUID()) + " ")
-							.concat(Integer.toString(m.getnOfBoats()) + "\n");
 
-				}
-				System.out.print(comp + "\n");
-
+				
 			}
 			if (list == 2) {
 
@@ -216,5 +212,36 @@ public class Register {
 		fr.close();
 
 	}
+	public static void clearData() throws IOException
+	{
+		FileWriter clearMem = new FileWriter("Members.txt", false);
+		FileWriter clearBoat = new FileWriter("Boats.txt", false);
+		PrintWriter clearMem1 = new PrintWriter(clearMem, false);
+		PrintWriter  clearBoat1= new PrintWriter(clearBoat, false);
+		clearMem1.flush();
+		clearMem1.close();
+		clearMem.close();
+		clearBoat1.flush();
+		clearBoat1.close();
+		clearBoat.close();
+	}
+	public static ArrayList<Integer> saveUID() {
+		ArrayList<Integer> tempUID = new ArrayList<>();
+		try{
+			String line = "";
+			FileInputStream file = new FileInputStream("Members.txt");
+			Scanner scan = new Scanner(file);
+			while(scan.hasNextLine()){
+				line= scan.nextLine();
+				tempUID.add(Integer.parseInt(line.substring(0,8)));
+			}
+			scan.close();
+		}catch (Exception ex){
+			ex.printStackTrace();
+		}
+		return tempUID;
+	}
+
 
 }
+
