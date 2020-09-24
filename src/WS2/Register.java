@@ -39,7 +39,7 @@ public class Register {
 				FileWriter fileWriter = new FileWriter(memFile,true);
 				BufferedWriter output = new BufferedWriter(fileWriter);
 				for (Member m : memList) {
-					output.write(m.getUID() + "   " + m.getName() + "   " + m.getPN() + "\n");
+					output.write(m.getUID() + ";" + m.getName() + ";" + m.getPN() + "\n");
 					System.out.println("Successfully wrote to the file.");
 				}
 				output.close();
@@ -52,7 +52,7 @@ public class Register {
 				FileWriter fileWriter = new FileWriter(memFile,true);
 				BufferedWriter output = new BufferedWriter(fileWriter);
 				for (Member m : memList) {
-					output.write(m.getUID() + "   " + m.getName() + "   " + m.getPN() + "\n");
+					output.write(m.getUID() + ";" + m.getName() + ";" + m.getPN() + "\n");
 					// System.out.println("Successfully wrote to the file.");
 				}
 				output.close();
@@ -122,7 +122,7 @@ public class Register {
 				FileWriter myWriter = new FileWriter(boatFile.getPath());
 				Writer output = new BufferedWriter(myWriter);
 				for (Boat b : boatList) {
-					output.write(tempUid.get(i).toString() + "   " + b.getBoatType() + "   "
+					output.write(tempUid.get(i).toString() + ";" + b.getBoatType() + ";"
 							+ Double.toString(b.getBoatLength()) + "\n");
 					// System.out.println("Successfully wrote to the file.");
 					i++;
@@ -138,7 +138,7 @@ public class Register {
 				Writer output = new BufferedWriter(myWriter);
 				for (Boat b : boatList) {
 					// System.out.print( b.getBoatType());
-					output.write(tempUid.get(i).toString() + "   " + b.getBoatType() + "   " + b.getBoatLength() + "\n");
+					output.write(tempUid.get(i).toString() + ";" + b.getBoatType() + ";" + b.getBoatLength() + "\n");
 					// System.out.println("Successfully wrote to the file.");
 					i++;
 				}
@@ -168,8 +168,20 @@ public class Register {
 			int list = sc.nextInt();
 			
 			if (list == 1) {
+				String line = "";
+				try{
+					FileInputStream file = new FileInputStream("Members.txt");
+					Scanner scan = new Scanner(file);
+					while(scan.hasNextLine()){
+						line=scan.nextLine();
+						line.split("");
+						System.out.println(line);
+					}
+				} catch (Exception ex){
+					ex.printStackTrace();
+				}
 
-				
+
 			}
 			if (list == 2) {
 

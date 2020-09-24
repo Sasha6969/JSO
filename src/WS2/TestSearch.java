@@ -10,13 +10,14 @@ public class TestSearch {
 
          Scanner sc = new Scanner(System.in);
          System.out.println("Enter UID: ");
-         int id = sc.nextInt();
+         String id = sc.next();
          String line = "";
          try{
-             FileInputStream file = new FileInputStream("Boats.txt");
+             FileInputStream file = new FileInputStream("Members.txt");
              Scanner scan = new Scanner(file);
              while(scan.hasNextLine()){
-                 line=scan
+                 line=scan.nextLine();
+                 if(line.startsWith(id));
              }
 
          } catch (Exception ex){
