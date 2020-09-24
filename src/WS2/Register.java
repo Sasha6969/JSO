@@ -39,7 +39,7 @@ public class Register {
 				FileWriter fileWriter = new FileWriter(memFile,true);
 				BufferedWriter output = new BufferedWriter(fileWriter);
 				for (Member m : memList) {
-					output.write(m.getName() + ";" + m.getPN() + ";" + m.getUID() + "\n");
+					output.write(m.getUID() + ";" + m.getName() + ";" + m.getPN() + "\n");
 					System.out.println("Successfully wrote to the file.");
 				}
 				output.close();
@@ -52,7 +52,7 @@ public class Register {
 				FileWriter fileWriter = new FileWriter(memFile,true);
 				BufferedWriter output = new BufferedWriter(fileWriter);
 				for (Member m : memList) {
-					output.write(m.getName() + ";" + m.getPN() + ";" + m.getUID() + "\n");
+					output.write(m.getUID() + ";" + m.getName() + ";" + m.getPN() + "\n");
 					// System.out.println("Successfully wrote to the file.");
 				}
 				output.close();
@@ -117,8 +117,8 @@ public class Register {
 		if (!boatFile.exists()) {
 			boatFile.createNewFile();
 			try {
-				FileWriter myWriter = new FileWriter(boatFile.getPath());
-				Writer output = new BufferedWriter(myWriter);
+				FileWriter myWriter = new FileWriter(boatFile,true);
+				BufferedWriter output = new BufferedWriter(myWriter);
 				for (Boat b : boatList) {
 					output.write(tempUid.get(i).toString() + ";" + b.getBoatType() + ";"
 							+ Double.toString(b.getBoatLength()) + "\n");
@@ -132,8 +132,8 @@ public class Register {
 			}
 		} else {
 			try {
-				FileWriter myWriter = new FileWriter(boatFile.getPath());
-				Writer output = new BufferedWriter(myWriter);
+				FileWriter myWriter = new FileWriter(boatFile,true);
+				BufferedWriter output = new BufferedWriter(myWriter);
 				for (Boat b : boatList) {
 					// System.out.print( b.getBoatType());
 					output.write(tempUid.get(i).toString() + ";" + b.getBoatType() + ";" + b.getBoatLength() + "\n");
@@ -187,33 +187,18 @@ public class Register {
 		return;
 	}
 
-	public static void fileSearch() throws IOException {
-
-		File f1 = new File("C:\\Users\\Saihe\\Documents\\GitHub\\JSO\\Members.txt");
-		String[] words = null;
-		FileReader fr = new FileReader(f1);
-		BufferedReader br = new BufferedReader(fr);
-		String s;
-		String input = "6575844";
-		int count = 0;
-
-		while ((s = br.readLine()) != null) {
-			words = s.split(";");
-			for (String word : words) {
-				if (word.equals(input)) {
-					count++;
-				}
-			}
-		}
-
-		if (count != 0) {
-			System.out.println("The given word is present for " + count + " Times in the file");
-		} else {
-			System.out.println("The given word is not present in the file");
-		}
-
-		fr.close();
-
+	public static void clearData() throws IOException
+	{
+		FileWriter clearMem = new FileWriter("Members.txt", false); 
+		FileWriter clearBoat = new FileWriter("Boats.txt", false); 
+        PrintWriter clearMem1 = new PrintWriter(clearMem, false);
+        PrintWriter  clearBoat1= new PrintWriter(clearBoat, false);
+        clearMem1.flush();
+        clearMem1.close();
+        clearMem.close();
+        clearBoat1.flush();
+        clearBoat1.close();
+        clearBoat.close();
 	}
-
+   //public static void 
 }

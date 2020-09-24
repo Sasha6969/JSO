@@ -29,7 +29,7 @@ public class Main {
 				System.out.println("Saving and Exiting...\n");
 				break;
 			case 0:
-				Register.regMemberTxt();
+				Register.clearData();
 				break;
 			}
 		}

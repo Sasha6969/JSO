@@ -50,7 +50,7 @@ public class Member {
         this.PN = PN;
         this.name = name;
         this.nOfBoats = numBoats;
-    }
-*/
+    }*/
+
 
 }
