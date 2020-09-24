@@ -48,9 +48,9 @@ public class Main {
 		System.out.println("| 1. Create a Member                |");
 		System.out.println("| 2. Register Boat             	    |");
 		System.out.println("| 3. Show Information               |");
-		System.out.println("| 4. Change Information	 	    |");
-		System.out.println("| 5. Delete Information	 	    |");
-		System.out.println("| 6. Exit			    |");
+		System.out.println("| 4. Change Information	 	        |");
+		System.out.println("| 5. Delete Information	 	        |");
+		System.out.println("| 6. Exit			                |");
 		System.out.println("|-----------------------------------|");
 		System.out.print("Enter a number: ");
 		

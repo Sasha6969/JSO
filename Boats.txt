@@ -1,5 +1,3 @@
-15645819;Sailboat;21.0
-15645819;Motorsailer;23.0
-15645819;Kayak;43.0
-15645819;Other;21.0
-15709307;Sailboat;32.0
+5315809;Motorsailer;50.0
+5315809;Kayak;15.0
+5315809;Sailboat;60.0

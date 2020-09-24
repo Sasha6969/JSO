@@ -155,12 +155,12 @@ public class Register {
 		System.out.println("\tShow Information\n");
 		System.out.println("Choose an option from below");
 		System.out.println("  1. Show Members List");
-		System.out.println("  2. Show Members' Info");
+		System.out.println("  2. Show Members Info");
 		System.out.print("\nEnter a number: ");
 		int choice3 = sc.nextInt();
 
 		if (choice3 == 1) {
-			System.out.println("\n1. Comapct List");
+			System.out.println("\n1. Compact List");
 			System.out.println("2. Verbose List");
 			System.out.println("Choose a List: ");
 			int list = sc.nextInt();
@@ -176,6 +176,7 @@ public class Register {
 
 			}
 			if (list == 2) {
+
 
 			}
 
