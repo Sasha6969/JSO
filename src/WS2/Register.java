@@ -36,8 +36,8 @@ public class Register {
 		if (!memFile.exists()) {
 			memFile.createNewFile();
 			try {
-				FileWriter myWriter = new FileWriter(memFile.getPath());
-				Writer output = new BufferedWriter(myWriter);
+				FileWriter fileWriter = new FileWriter(memFile,true);
+				BufferedWriter output = new BufferedWriter(fileWriter);
 				for (Member m : memList) {
 					output.write(m.getName() + ";" + m.getPN() + ";" + m.getUID() + "\n");
 					System.out.println("Successfully wrote to the file.");
@@ -49,8 +49,8 @@ public class Register {
 			}
 		} else {
 			try {
-				FileWriter myWriter = new FileWriter(memFile.getPath());
-				Writer output = new BufferedWriter(myWriter);
+				FileWriter fileWriter = new FileWriter(memFile,true);
+				BufferedWriter output = new BufferedWriter(fileWriter);
 				for (Member m : memList) {
 					output.write(m.getName() + ";" + m.getPN() + ";" + m.getUID() + "\n");
 					// System.out.println("Successfully wrote to the file.");
@@ -77,7 +77,7 @@ public class Register {
 
 				System.out.print("How Many Boats Would Like to Register: ");
 				int boats = sc.nextInt();
-
+				m.setnOfBoats(boats);
 				for (int i = 0; i < boats; i++) {
 					tempUid.add(ID);
 					System.out.print("\nChoose a Boat Type (1-4): ");
@@ -86,7 +86,7 @@ public class Register {
 					int type = sc.nextInt();
 					System.out.print("Enter Boat Length in Meters: ");
 					double length = sc.nextInt();
-
+					
 					if (type == 1) {
 						Boat sail = new Boat(length, "Sailboat");
 						boatList.add(sail);
@@ -164,7 +164,7 @@ public class Register {
 			System.out.println("2. Verbose List");
 			System.out.println("Choose a List: ");
 			int list = sc.nextInt();
-
+			
 			if (list == 1) {
 				String comp = "";
 				for (Member m : memList) {
