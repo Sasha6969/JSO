@@ -1,19 +1,13 @@
 package WS2;
 
-public class Member {
+import java.util.ArrayList;
 
-    private int UID;
-    private String PN;
-    private String name;
-    private int nOfBoats;
+class Member {
 
-	public int getnOfBoats() {
-		return nOfBoats;
-	}
-
-	public void setnOfBoats(int nOfBoats) {
-		this.nOfBoats = nOfBoats;
-	}
+	private int UID;
+	private String PN;
+	private String name;
+	private ArrayList<Boat> boatList = new ArrayList<>();
 
 	public int getUID() {
 		return UID;
@@ -39,18 +33,32 @@ public class Member {
 		this.name = name;
 	}
 
-	public Member(String name, int UID, String PN) {
-        this.UID = UID;
-        this.PN = PN;
-        this.name = name;
-    }
-	
-	/*public Member(String name, int UID, String PN, int numBoats) {
-        this.UID = UID;
-        this.PN = PN;
-        this.name = name;
-        this.nOfBoats = numBoats;
-    }*/
+	public int getNoOfBoats() {
+		return boatList.size();
+	}
 
+	public ArrayList<Boat> getBoatList() {
+		return new ArrayList<Boat>(boatList);
+	}
+
+	public void registerBoat(double length, String type) {
+		this.boatList.add(new Boat(length, type));
+	}
+
+	public void updateBoat(double length, String type, Boat boat) {
+		boat.setBoatLength(length);
+		boat.setBoatType(type);
+	}
+
+	public void deleteBoat(Boat boat) {
+		this.boatList.remove(boat);
+	}
+
+	public Member(String name, int UID, String PN) {
+		this.UID = UID;
+		this.PN = PN;
+		this.name = name;
+
+	}
 
 }

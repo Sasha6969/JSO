@@ -36,11 +36,12 @@ public class Register {
 		if (!memFile.exists()) {
 			memFile.createNewFile();
 			try {
-				FileWriter fileWriter = new FileWriter(memFile,true);
+				FileWriter fileWriter = new FileWriter(memFile, true);
 				BufferedWriter output = new BufferedWriter(fileWriter);
 				for (Member m : memList) {
 					output.write(m.getUID() + ";" + m.getName() + ";" + m.getPN() + "\n");
 					System.out.println("Successfully wrote to the file.");
+				
 				}
 				output.close();
 			} catch (IOException e) {
@@ -49,7 +50,7 @@ public class Register {
 			}
 		} else {
 			try {
-				FileWriter fileWriter = new FileWriter(memFile,true);
+				FileWriter fileWriter = new FileWriter(memFile, true);
 				BufferedWriter output = new BufferedWriter(fileWriter);
 				for (Member m : memList) {
 					output.write(m.getUID() + ";" + m.getName() + ";" + m.getPN() + "\n");
@@ -71,9 +72,9 @@ public class Register {
 		System.out.print("What is your UID: ");
 		int ID = sc.nextInt();
 		ArrayList<Integer> storedId = new ArrayList<>();
-		storedId=saveUID();
+		storedId = saveUID();
 
-		for (int i=0;i<storedId.size();i++) {
+		for (int i = 0; i < storedId.size(); i++) {
 
 			if (storedId.get(i) == ID) {
 
@@ -88,7 +89,7 @@ public class Register {
 					int type = sc.nextInt();
 					System.out.print("Enter Boat Length in Meters: ");
 					double length = sc.nextDouble();
-					
+
 					if (type == 1) {
 						Boat sail = new Boat(length, "Sailboat");
 						boatList.add(sail);
@@ -106,10 +107,10 @@ public class Register {
 						boatList.add(other);
 					}
 				}
-			} /*else {continue;
-				System.out.print("UID doesnt exist,please try again: ");
-				ID = sc.nextInt();
-			}*/
+			} /*
+				 * else {continue; System.out.print("UID doesnt exist,please try again: "); ID =
+				 * sc.nextInt(); }
+				 */
 		}
 	}
 
@@ -127,6 +128,7 @@ public class Register {
 					// System.out.println("Successfully wrote to the file.");
 					i++;
 				}
+
 				output.close();
 			} catch (IOException e) {
 				System.out.println("An error occurred.");
@@ -166,25 +168,23 @@ public class Register {
 			System.out.println("2. Verbose List");
 			System.out.println("Choose a List: ");
 			int list = sc.nextInt();
-			
+
 			if (list == 1) {
 				String line = "";
-				try{
+				try {
 					FileInputStream file = new FileInputStream("Members.txt");
 					Scanner scan = new Scanner(file);
-					while(scan.hasNextLine()){
-						line=scan.nextLine();
+					while (scan.hasNextLine()) {
+						line = scan.nextLine();
 						line.split("");
 						System.out.println(line);
 					}
-				} catch (Exception ex){
+				} catch (Exception ex) {
 					ex.printStackTrace();
 				}
 
-
 			}
 			if (list == 2) {
-
 
 			}
 
@@ -196,40 +196,29 @@ public class Register {
 		return;
 	}
 
-	public static void fileSearch() throws IOException {
-
-		File f1 = new File("C:\\Users\\Saihe\\Documents\\GitHub\\JSO\\Members.txt");
-		String[] words = null;
-		FileReader fr = new FileReader(f1);
-		BufferedReader br = new BufferedReader(fr);
-		String s;
-		String input = "6575844";
-		int count = 0;
-
-		while ((s = br.readLine()) != null) {
-			words = s.split(";");
-			for (String word : words) {
-				if (word.equals(input)) {
-					count++;
-				}
-			}
-		}
-
-		if (count != 0) {
-			System.out.println("The given word is present for " + count + " Times in the file");
-		} else {
-			System.out.println("The given word is not present in the file");
-		}
-
-		fr.close();
-
-	}
-	public static void clearData() throws IOException
-	{
+	/*
+	 * public static void fileSearch() throws IOException {
+	 * 
+	 * File f1 = new File("C:\\Users\\Saihe\\Documents\\GitHub\\JSO\\Members.txt");
+	 * String[] words = null; FileReader fr = new FileReader(f1); BufferedReader br
+	 * = new BufferedReader(fr); String s; String input = "6575844"; int count = 0;
+	 * 
+	 * while ((s = br.readLine()) != null) { words = s.split(";"); for (String word
+	 * : words) { if (word.equals(input)) { count++; } } }
+	 * 
+	 * if (count != 0) { System.out.println("The given word is present for " + count
+	 * + " Times in the file"); } else {
+	 * System.out.println("The given word is not present in the file"); }
+	 * 
+	 * fr.close();
+	 * 
+	 * }
+	 */
+	public static void clearData() throws IOException {
 		FileWriter clearMem = new FileWriter("Members.txt", false);
 		FileWriter clearBoat = new FileWriter("Boats.txt", false);
 		PrintWriter clearMem1 = new PrintWriter(clearMem, false);
-		PrintWriter  clearBoat1= new PrintWriter(clearBoat, false);
+		PrintWriter clearBoat1 = new PrintWriter(clearBoat, false);
 		clearMem1.flush();
 		clearMem1.close();
 		clearMem.close();
@@ -237,23 +226,38 @@ public class Register {
 		clearBoat1.close();
 		clearBoat.close();
 	}
-	public static ArrayList<Integer> saveUID() {
+
+	public static ArrayList<Integer> saveUID() {// To check from the seved uid's in member.txt
 		ArrayList<Integer> tempUID = new ArrayList<>();
-		try{
+		try {
 			String line = "";
 			FileInputStream file = new FileInputStream("Members.txt");
 			Scanner scan = new Scanner(file);
-			while(scan.hasNextLine()){
-				line= scan.nextLine();
-				tempUID.add(Integer.parseInt(line.substring(0,8)));
+			while (scan.hasNextLine()) {
+				line = scan.nextLine();
+				tempUID.add(Integer.parseInt(line.substring(0, 6)));
 			}
 			scan.close();
-		}catch (Exception ex){
+		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
 		return tempUID;
 	}
 
+	public static void memTextToList() {
+		try {
+			String line = "";
+				FileInputStream file = new FileInputStream("Boats.txt");
+				Scanner scan = new Scanner(file);
+				while (scan.hasNextLine()) {
 
+					line = scan.nextLine();
+					String[] part=line.split(";");
+					memList.add(new Member(part[0],Integer.parseInt(part[1]),part[2]));
+			}
+			//scan.close();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}
 }
-

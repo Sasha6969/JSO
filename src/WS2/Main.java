@@ -13,7 +13,7 @@ public class Main {
 			switch (menuChoice) {
 			case 1:
 				Register.regMember();
-				Register.regMemberTxt();
+				
 				break;
 			case 2:
 				Register.regBoat();
@@ -27,6 +27,7 @@ public class Main {
 				break;
 			case 5:
 				System.out.println("Saving and Exiting...\n");
+				Register.regMemberTxt();
 				break;
 			case 0:
 				Register.clearData();
