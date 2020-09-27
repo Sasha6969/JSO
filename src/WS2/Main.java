@@ -6,14 +6,14 @@ import java.util.*;
 public class Main {
 
 	public static void main(String[] args) throws IOException {
-
+		Register.textToList();
 		int menuChoice = 0;
-		while (menuChoice!=5) {
+		while (menuChoice != 5) {
 			menuChoice = menu();
 			switch (menuChoice) {
 			case 1:
 				Register.regMember();
-				
+
 				break;
 			case 2:
 				Register.regBoat();
@@ -29,6 +29,11 @@ public class Main {
 				System.out.println("Saving and Exiting...\n");
 				Register.regMemberTxt();
 				break;
+			case 6:
+				Register.deleteMem();
+				break;
+			case 7:
+				Register.deleteBoat();
 			case 0:
 				Register.clearData();
 				break;
@@ -37,10 +42,9 @@ public class Main {
 	}
 
 	public static int menu() {
-		
+
 		Scanner sc = new Scanner(System.in);
 		int menuChoice = 0;
-		
 
 		System.out.println("|-----------------------------------|");
 		System.out.println("|      Welcome to the Yacht club    |");
@@ -54,9 +58,9 @@ public class Main {
 		System.out.println("| 6. Exit			    |");
 		System.out.println("|-----------------------------------|");
 		System.out.print("Enter a number: ");
-		
+
 		menuChoice = sc.nextInt();
-		
+
 		return menuChoice;
 	}
 }

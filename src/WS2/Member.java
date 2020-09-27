@@ -54,7 +54,7 @@ class Member {
 		this.boatList.remove(boat);
 	}
 
-	public Member(String name, int UID, String PN) {
+	public Member(int UID, String name, String PN) {
 		this.UID = UID;
 		this.PN = PN;
 		this.name = name;

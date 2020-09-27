@@ -1,2 +1,4 @@
-332269;Sailboat;28.0
-332269;Motorsailer;39.0
+13257068;SailBoat;21.0
+13257068;MotorSailer;31.0
+13257068;Kayak;41.0
+13281839;MotorSailer;31.0
