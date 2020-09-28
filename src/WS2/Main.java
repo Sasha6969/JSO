@@ -8,41 +8,33 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		Register.textToList();
 		int menuChoice = 0;
-		while (menuChoice != 5) {
+		while (menuChoice != 6) {
 			menuChoice = menu();
 			switch (menuChoice) {
 			case 1:
 				Register.regMember();
-
+				Register.regMemberTxt();
 				break;
 			case 2:
 				Register.regBoat();
 				Register.regBoatTxt();
 				break;
 			case 3:
-				Register.showInfo();
+				showInfo();
 				break;
 			case 4:
-				System.out.println("you entered 4\n");
+				System.out.println("Change info");
 				break;
 			case 5:
-				System.out.println("Saving and Exiting...\n");
-				Register.regMemberTxt();
+				deleteInfo();
 				break;
 			case 6:
-				Register.deleteMem();
+				System.out.println("Exiting...");
+				System.exit(0);
 				break;
 			case 7:
-				Register.deleteBoat();
-				break;
-			case 8:
-				Register.upadateBoat();
-				break;
-			case 9:
-				Register.updateMemInfo();
-				break;
-			case 0:
 				Register.clearData();
+				System.out.println("....Data Cleared");
 				break;
 			}
 		}
@@ -69,5 +61,53 @@ public class Main {
 		menuChoice = sc.nextInt();
 
 		return menuChoice;
+	}
+	
+	public static void showInfo() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println();
+		System.out.println("\t--Show Information--\n");
+		System.out.println("Choose an option from below");
+		System.out.println("  1. Show Members List");
+		System.out.println("  2. Show Members Info");
+		System.out.print("\nEnter a number: ");
+		
+		int choice3 = sc.nextInt();
+
+		if (choice3 == 1) {
+			System.out.println("\nChoose a List");
+			System.out.println("1. Compact List");
+			System.out.println("2. Verbose List");
+			System.out.print("\nEnter a number: ");
+			int list = sc.nextInt();
+
+			if (list == 1) {
+				Register.printCompactList();
+			}
+			if (list == 2) {
+				Register.printVerboseList();
+			}
+		}
+		if (choice3 == 2) {
+			Register.specMemInfo();
+		}
+	return;
+	}
+	
+	public static void deleteInfo() throws IOException {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("\tDelete Information\n");
+		System.out.println("1. Delete Member");
+		System.out.println("2. Delete Boat");
+		System.out.println("Enter Number: ");
+		int di = sc.nextInt();
+		if (di==1) {
+			Register.deleteMem();
+		}
+		if (di==2) {
+			Register.deleteBoat();
+		}
+	return;
 	}
 }
