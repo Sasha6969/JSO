@@ -303,17 +303,67 @@ public class Register {
 					if (bt.equalsIgnoreCase(b.getBoatType()))
 
 					{
-						m.getBoatList().remove(b);
-						System.out.println(b.getBoatType());
+						m.deleteBoat(b);
 						System.out.println("Boat successfully deleted");
 						break;
 					}
-				} 
+				}
 
 				break;
 			}
 		}
 		regBoatTxt();
+	}
+
+	public static void upadateBoat() throws IOException {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("What is your UID : ");
+		int id = sc.nextInt();
+		for (Member m : memList) {
+			if (id == m.getUID()) {
+				System.out.println("Which boat details do you want to update? ");
+				String bt = sc.next();
+				for (Boat b : m.getBoatList()) {
+					if (bt.equalsIgnoreCase(b.getBoatType()))
+
+					{
+						System.out.println("Name of the Boat: ");
+						String btName = sc.next();
+						System.out.println("Length of Boat: ");
+						Double btLength = sc.nextDouble();
+						m.updateBoat(btLength, btName, b);
+						System.out.println("Boat successfully updated");
+						break;
+					}
+				}
+
+				break;
+			}
+		}
+		regBoatTxt();
+	}
+
+	public static void updateMemInfo() throws IOException {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("What is your UID : ");
+		int id = sc.nextInt();
+		sc.nextLine();
+		for (Member m : memList) {
+			if (id == m.getUID()) {
+
+				System.out.println("\nEnter Full Name: ");
+				String name = sc.nextLine();
+				m.setName(name);
+
+				System.out.println("Enter the Personal Number (YYMMDDXXXX): ");
+				String persNum = sc.nextLine();
+				m.setPN(persNum);
+				System.out.println("The member info updated Successfully");
+				break;
+			}
+		}
+
+		regMemberTxt();
 	}
 
 }

@@ -35,6 +35,12 @@ public class Main {
 			case 7:
 				Register.deleteBoat();
 				break;
+			case 8:
+				Register.upadateBoat();
+				break;
+			case 9:
+				Register.updateMemInfo();
+				break;
 			case 0:
 				Register.clearData();
 				break;
