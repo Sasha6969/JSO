@@ -301,14 +301,15 @@ public class Register {
 				String bt = sc.next();
 				for (Boat b : m.getBoatList()) {
 					if (bt.equalsIgnoreCase(bt))
-						
+
 					{
 						m.getBoatList().remove(b);
 						System.out.println("Boat successfully deleted");
-
+						break;
 					}
-				}//hey
+				} // hey
 
+				break;
 			}
 		}
 		regBoatTxt();
