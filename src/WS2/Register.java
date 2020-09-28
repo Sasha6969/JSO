@@ -297,15 +297,20 @@ public class Register {
 		for (Member m : memList) {
 			if (id == m.getUID()) {
 				System.out.println("Which boat do you want to remove? ");
-				String bt=sc.next();
-				for(Boat b:m.getBoatList())
-				{
-					if(bt.equalsIgnoreCase(bt));
-					m.getBoatList().remove(b);
+				String bt = sc.next();
+				for (Boat b : m.getBoatList()) {
+					if (bt.equalsIgnoreCase(bt))
+						
+					{
+						m.getBoatList().remove(b);
+						System.out.println("Boat successfully deleted");
+
+					}
 				}
-				System.out.println("Boat successfully deleted");
+
 			}
 		}
+		regBoatTxt();
 	}
 
 }

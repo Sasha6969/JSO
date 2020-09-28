@@ -34,6 +34,7 @@ public class Main {
 				break;
 			case 7:
 				Register.deleteBoat();
+				break;
 			case 0:
 				Register.clearData();
 				break;
