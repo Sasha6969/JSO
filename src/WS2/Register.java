@@ -364,6 +364,6 @@ public class Register {
 		}
 
 		regMemberTxt();
-	}
+	}//hey
 	
 }
