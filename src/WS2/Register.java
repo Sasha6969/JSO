@@ -300,10 +300,11 @@ public class Register {
 				System.out.println("Which boat do you want to remove? ");
 				String bt = sc.next();
 				for (Boat b : m.getBoatList()) {
-					if (bt.equalsIgnoreCase(bt))
+					if (bt.equalsIgnoreCase(b.getBoatType()))
 
 					{
 						m.getBoatList().remove(b);
+						System.out.println(b.getBoatType());
 						System.out.println("Boat successfully deleted");
 						break;
 					}
