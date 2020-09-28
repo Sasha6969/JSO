@@ -308,7 +308,7 @@ public class Register {
 						System.out.println("Boat successfully deleted");
 						break;
 					}
-				} // hey
+				} 
 
 				break;
 			}
