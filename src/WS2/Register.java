@@ -366,12 +366,4 @@ public class Register {
 		regMemberTxt();
 	}
 	
-	/*public static boolean checkUid()
-	{
-		Scanner sc=new Scanner(System.in);
-	    System.out.println("What is your UID : ");
-	    int id =sc.nextInt();
-	    
-	}
-*/
 }
