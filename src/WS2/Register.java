@@ -371,6 +371,7 @@ public class Register {
 		Scanner sc=new Scanner(System.in);
 	    System.out.println("What is your UID : ");
 	    int id =sc.nextInt();
+	    
 	}
 */
 }
