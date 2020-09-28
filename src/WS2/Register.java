@@ -283,6 +283,7 @@ public class Register {
 			if (id == m.getUID()) {
 				memList.remove(m);
 				System.out.println("Member deleted successfully");
+				break;
 			}
 		}
 		regMemberTxt();
