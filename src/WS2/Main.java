@@ -5,28 +5,27 @@ import java.util.*;
 
 public class Main {
 
-	public static Register register = new Register();
-
+	public static Register Register = new Register();
+	
 	public static void main(String[] args) throws IOException {
-
-		register.textToList();
+		Register.textToList();
 		int menuChoice = 0;
 		while (menuChoice != 6) {
 			menuChoice = menu();
 			switch (menuChoice) {
 			case 1:
-				register.regMember();
-				register.regMemberTxt();
+				Register.regMember();
+				Register.regMemberTxt();
 				break;
 			case 2:
-				register.regBoat();
-				register.regBoatTxt();
+				Register.regBoat();
+				Register.regBoatTxt();
 				break;
 			case 3:
 				showInfo();
 				break;
 			case 4:
-				System.out.println("Change info");
+				updateInfo();
 				break;
 			case 5:
 				deleteInfo();
@@ -36,7 +35,7 @@ public class Main {
 				System.exit(0);
 				break;
 			case 7:
-				register.clearData();
+				Register.clearData();
 				System.out.println("....Data Cleared");
 				break;
 			}
@@ -47,31 +46,26 @@ public class Main {
 
 		Scanner sc = new Scanner(System.in);
 		int menuChoice = 0;
-		try {
-			System.out.println("|-----------------------------------|");
-			System.out.println("|      Welcome to the Yacht club    |");
-			System.out.println("|---------------MENU----------------|");
-			System.out.println("| Choose an option from below:      |");
-			System.out.println("| 1. Create a Member                |");
-			System.out.println("| 2. Register Boat             	    |");
-			System.out.println("| 3. Show Information               |");
-			System.out.println("| 4. Change Information	 	    |");
-			System.out.println("| 5. Delete Information	 	    |");
-			System.out.println("| 6. Exit			    |");
-			System.out.println("|-----------------------------------|");
-			System.out.print("Enter a number: ");
 
-			menuChoice = sc.nextInt();
-		}catch (InputMismatchException ex){
-			System.out.println("Error, Please Enter a Valid Integer: ");
-			sc.next();
-		}
+		System.out.println("|-----------------------------------|");
+		System.out.println("|      Welcome to the Yacht club    |");
+		System.out.println("|---------------MENU----------------|");
+		System.out.println("| Choose an option from below:      |");
+		System.out.println("| 1. Create a Member                |");
+		System.out.println("| 2. Register Boat             	    |");
+		System.out.println("| 3. Show Information               |");
+		System.out.println("| 4. Update Information	 	    |");
+		System.out.println("| 5. Delete Information	 	    |");
+		System.out.println("| 6. Exit			    |");
+		System.out.println("|-----------------------------------|");
+		System.out.print("Enter a number: ");
+
+		menuChoice = sc.nextInt();
 
 		return menuChoice;
 	}
 	
 	public static void showInfo() {
-
 		Scanner sc = new Scanner(System.in);
 		System.out.println();
 		System.out.println("\t--Show Information--\n");
@@ -90,14 +84,14 @@ public class Main {
 			int list = sc.nextInt();
 
 			if (list == 1) {
-				register.printCompactList();
+				Register.printCompactList();
 			}
 			if (list == 2) {
-				register.printVerboseList();
+				Register.printVerboseList();
 			}
 		}
 		if (choice3 == 2) {
-			register.specMemInfo();
+			Register.specMemInfo();
 		}
 	return;
 	}
@@ -105,17 +99,37 @@ public class Main {
 	public static void deleteInfo() throws IOException {
 		
 		Scanner sc = new Scanner(System.in);
-		System.out.println("\tDelete Information\n");
+		System.out.println("\t--Delete Information--\n");
 		System.out.println("1. Delete Member");
 		System.out.println("2. Delete Boat");
 		System.out.println("Enter Number: ");
 		int di = sc.nextInt();
 		if (di==1) {
-			register.deleteMem();
+			Register.deleteMem();
 		}
 		if (di==2) {
-			register.deleteBoat();
+			Register.deleteBoat();
 		}
 	return;
+	}
+	
+	public static void updateInfo() throws IOException {
+		Scanner sc = new Scanner(System.in);
+		System.out.println();
+		System.out.println("\t--update Information--\n");
+		System.out.println("Choose an option from below");
+		System.out.println("  1. Update Member");
+		System.out.println("  2. Update Boat");
+		System.out.print("\nEnter a number: ");
+		int info = sc.nextInt();
+		
+		if (info == 1) {
+			Register.updateMemInfo();
+		}
+		if (info == 2) {
+			Register.upadateBoat();
+		}
+			
+		
 	}
 }
