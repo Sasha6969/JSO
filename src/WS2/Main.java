@@ -131,7 +131,7 @@ public class Main {
                 reg.updateMemInfo();
             }
             if (info == 2) {
-                reg.upadateBoat();
+                reg.updateBoat();
             }
 
 

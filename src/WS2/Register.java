@@ -258,7 +258,7 @@ public class Register {
 		regBoatTxt();
 	}
 
-	public void upadateBoat() throws IOException {
+	public void updateBoat() throws IOException {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("What is your UID : ");
 		int id = sc.nextInt();
