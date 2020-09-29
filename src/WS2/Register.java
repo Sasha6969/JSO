@@ -262,7 +262,7 @@ public class Register {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("What is your UID : ");
 		int id = sc.nextInt();
-		for (Member m : memList) {//Checking through the member list 
+		for (Member m : memList) {//Checking through the member 
 			if (id == m.getUID()) {
 				System.out.println("Which boat details do you want to update? ");
 				String bt = sc.next();
