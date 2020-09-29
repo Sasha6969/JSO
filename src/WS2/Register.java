@@ -6,11 +6,11 @@ import java.util.Scanner;
 
 public class Register {
 
-	private  ArrayList<Member> memList = new ArrayList<>();
-	private  File memFile = new File("Members.txt");
-	private  File boatFile = new File("Boats.txt");
+	private ArrayList<Member> memList = new ArrayList<>();
+	private File memFile = new File("Members.txt");
+	private File boatFile = new File("Boats.txt");
 
-	public  void regMember() { // HELOOOOOOO0
+	public void regMember() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("\n\t--Create a member--");
 
@@ -23,18 +23,17 @@ public class Register {
 		int uniqueId = (int) (System.currentTimeMillis() & 0xffffff);// generate unique id
 
 		Member temp = new Member(uniqueId, name, persNum);
-		memList.add(temp);
+		memList.add(temp);// Storing Member objects in an ArrayList
 
 		System.out.println("\nMember " + temp.getName() + " has been created");
 		System.out.println("Your PN: " + temp.getPN());
 		System.out.println("Your UID: " + temp.getUID());
 	}
 
-	public  void regMemberTxt() throws IOException {
+	public void regMemberTxt() throws IOException {// Adding the members to text file
 		if (!memFile.exists()) {
 			memFile.createNewFile();
 			try {
-				// FileWriter fileWriter = new FileWriter(memFile,true);
 				FileWriter fileWriter = new FileWriter(memFile);
 				BufferedWriter output = new BufferedWriter(fileWriter);
 				for (Member m : memList) {
@@ -62,7 +61,7 @@ public class Register {
 		}
 	}
 
-	public  void regBoat() throws IOException {
+	public void regBoat() throws IOException {// Registering boats
 
 		Scanner sc = new Scanner(System.in);
 		System.out.println("\n\t--Register a Boat--");
@@ -70,7 +69,7 @@ public class Register {
 		System.out.print("What is your UID: ");
 		int ID = sc.nextInt();
 		for (Member m : memList) {
-			if (m.getUID() == ID) {
+			if (m.getUID() == ID) {// Checking it with UID in the member list
 				System.out.print("How Many Boats Would Like to Register: ");
 				int boats = sc.nextInt();
 
@@ -100,8 +99,7 @@ public class Register {
 		}
 	}
 
-	public  void regBoatTxt() throws IOException {
-		// int i = 0;// counter for temp id
+	public void regBoatTxt() throws IOException {// Adding boats to text
 
 		if (!boatFile.exists()) {
 			boatFile.createNewFile();
@@ -113,8 +111,6 @@ public class Register {
 						for (Boat b : m.getBoatList())
 							output.write(Integer.toString(m.getUID()) + ";" + b.getBoatType() + ";"
 									+ Double.toString(b.getBoatLength()) + "\n");
-
-						// i++;
 					}
 				}
 
@@ -144,41 +140,7 @@ public class Register {
 		}
 	}
 
-	public  void showInfo() {
-
-		Scanner sc = new Scanner(System.in);
-		System.out.println();
-		System.out.println("\tShow Information\n");
-		System.out.println("Choose an option from below");
-		System.out.println("  1. Show Members List");
-		System.out.println("  2. Show Members Info");
-		System.out.print("\nEnter a number: ");
-		int choice3 = sc.nextInt();
-
-		if (choice3 == 1) {
-			System.out.println("\n1. Compact List");
-			System.out.println("2. Verbose List");
-			System.out.println("Choose a List: ");
-			int list = sc.nextInt();
-
-			if (list == 1) {
-				printCompactList();
-			}
-			if (list == 2) {
-				printVerboseList();
-
-			}
-
-		}
-		if (choice3 == 2) {
-			specMemInfo();
-
-		}
-
-		return;
-	}
-
-	public  void clearData() throws IOException {
+	public void clearData() throws IOException {
 		FileWriter clearMem = new FileWriter("Members.txt", false);
 		FileWriter clearBoat = new FileWriter("Boats.txt", false);
 		PrintWriter clearMem1 = new PrintWriter(clearMem, false);
@@ -191,24 +153,7 @@ public class Register {
 		clearBoat.close();
 	}
 
-	public  ArrayList<Integer> saveUID() {// To check from the seved uid's in member.txt
-		ArrayList<Integer> tempUID = new ArrayList<>();
-		try {
-			String line = "";
-			FileInputStream file = new FileInputStream("Members.txt");
-			Scanner scan = new Scanner(file);
-			while (scan.hasNextLine()) {
-				line = scan.nextLine();
-				tempUID.add(Integer.parseInt(line.substring(0, 8)));
-			}
-			scan.close();
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-		return tempUID;
-	}
-
-	public  void textToList() {
+	public void textToList() {
 		if (memList.size() == 0) {
 			try {
 				String line = "";
@@ -235,14 +180,13 @@ public class Register {
 						}
 					}
 				}
-				// scan.close();
 			} catch (Exception ex) {
 				ex.printStackTrace();
 			}
 		}
 	}
 
-	public  void printCompactList() {
+	public void printCompactList() {
 		System.out.println("UID/" + "Name/" + "No. Of Boats	");
 		for (Member m : memList) {
 
@@ -251,7 +195,7 @@ public class Register {
 		}
 	}
 
-	public  void printVerboseList() {
+	public void printVerboseList() {
 		for (Member m : memList) {
 			System.out.println(Integer.toString(m.getUID()) + " " + m.getName() + " " + m.getPN());
 			for (Boat b : m.getBoatList()) {
@@ -260,7 +204,7 @@ public class Register {
 		}
 	}
 
-	public  void specMemInfo() {
+	public void specMemInfo() {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("What is your UID : ");
 		int id = sc.nextInt();
@@ -272,10 +216,9 @@ public class Register {
 					System.out.println("						" + b.getBoatType() + "  " + b.getBoatLength());
 			}
 		}
-		// sc.close();//we need to add exception handling
 	}
 
-	public  void deleteMem() throws IOException {
+	public void deleteMem() throws IOException {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("What is your UID : ");
 		int id = sc.nextInt();
@@ -291,11 +234,11 @@ public class Register {
 
 	}
 
-	public  void deleteBoat() throws IOException {
+	public void deleteBoat() throws IOException {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("What is your UID : ");
 		int id = sc.nextInt();
-		for (Member m : memList) {
+		for (Member m : memList) {//Checking through the member list
 			if (id == m.getUID()) {
 				System.out.println("Which boat do you want to remove? ");
 				String bt = sc.next();
@@ -315,11 +258,11 @@ public class Register {
 		regBoatTxt();
 	}
 
-	public  void upadateBoat() throws IOException {
+	public void upadateBoat() throws IOException {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("What is your UID : ");
 		int id = sc.nextInt();
-		for (Member m : memList) {
+		for (Member m : memList) {//Checking through the member list 
 			if (id == m.getUID()) {
 				System.out.println("Which boat details do you want to update? ");
 				String bt = sc.next();
@@ -343,7 +286,7 @@ public class Register {
 		regBoatTxt();
 	}
 
-	public  void updateMemInfo() throws IOException {
+	public void updateMemInfo() throws IOException {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("What is your UID : ");
 		int id = sc.nextInt();
@@ -364,6 +307,6 @@ public class Register {
 		}
 
 		regMemberTxt();
-	}// hey
+	}
 
 }
