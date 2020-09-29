@@ -5,21 +5,21 @@ import java.util.*;
 
 public class Main {
 
-	public static Register Register = new Register();
+	public static Register reg = new Register();
 	
 	public static void main(String[] args) throws IOException {
-		Register.textToList();
+		reg.textToList();
 		int menuChoice = 0;
 		while (menuChoice != 6) {
 			menuChoice = menu();
 			switch (menuChoice) {
 			case 1:
-				Register.regMember();
-				Register.regMemberTxt();
+				reg.regMember();
+				reg.regMemberTxt();
 				break;
 			case 2:
-				Register.regBoat();
-				Register.regBoatTxt();
+				reg.regBoat();
+				reg.regBoatTxt();
 				break;
 			case 3:
 				showInfo();
@@ -35,7 +35,7 @@ public class Main {
 				System.exit(0);
 				break;
 			case 7:
-				Register.clearData();
+				reg.clearData();
 				System.out.println("....Data Cleared");
 				break;
 			}
@@ -84,16 +84,15 @@ public class Main {
 			int list = sc.nextInt();
 
 			if (list == 1) {
-				Register.printCompactList();
+				reg.printCompactList();
 			}
 			if (list == 2) {
-				Register.printVerboseList();
+				reg.printVerboseList();
 			}
 		}
 		if (choice3 == 2) {
-			Register.specMemInfo();
+			reg.specMemInfo();
 		}
-	return;
 	}
 	
 	public static void deleteInfo() throws IOException {
@@ -105,10 +104,10 @@ public class Main {
 		System.out.println("Enter Number: ");
 		int di = sc.nextInt();
 		if (di==1) {
-			Register.deleteMem();
+			reg.deleteMem();
 		}
 		if (di==2) {
-			Register.deleteBoat();
+			reg.deleteBoat();
 		}
 	return;
 	}
@@ -124,10 +123,10 @@ public class Main {
 		int info = sc.nextInt();
 		
 		if (info == 1) {
-			Register.updateMemInfo();
+			reg.updateMemInfo();
 		}
 		if (info == 2) {
-			Register.upadateBoat();
+			reg.upadateBoat();
 		}
 			
 		
