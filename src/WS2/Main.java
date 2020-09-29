@@ -42,7 +42,7 @@ public class Main {
         }
     }
 
-    public static int menu() {
+    public static int menu() {//
 
         Scanner sc = new Scanner(System.in);
         int menuChoice = 0;
