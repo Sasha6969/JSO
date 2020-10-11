@@ -1,0 +1,2 @@
+5070585;Sailboat;5.5
+5070585;Motorsailer;6.6

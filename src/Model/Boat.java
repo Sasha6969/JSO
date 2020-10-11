@@ -1,4 +1,4 @@
-package WS2;
+package Model;
 
 public class Boat {
 
