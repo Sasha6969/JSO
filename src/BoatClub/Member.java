@@ -1,8 +1,8 @@
-package WS2;
+package BoatClub;
 
 import java.util.ArrayList;
 
-class Member {
+public class Member {
 
 	private int UID;
 	private String PN;

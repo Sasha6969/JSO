@@ -1,4 +1,4 @@
-package WS2;
+package BoatClub;
 
 public class Boat {
 
